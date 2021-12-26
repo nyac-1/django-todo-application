@@ -1,14 +1,18 @@
 <h1>My List</h1>
 
 <table>
-
+    {% if tasks %}
         <tr>
             <th>Item</th>
+            <th></th>
         </tr>
+    {% endif %}
     {% for task in tasks %}
         <tr>
             <td>{{task.title}}</td>
+            <td><a href = "task/{{task.id}}">Smth</a></td>
         </tr>
+        
     {% empty %}
         <h3>No items available!</h3>
     {% endfor %}
